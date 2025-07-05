@@ -44,8 +44,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 400px;
-  height: 140px;
+  width: 100%;
+  height: 180px;
   background: #ff69b4;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   transition: transform 1s ease-in-out;
@@ -54,28 +54,35 @@ body {
 
 .letter {
   position: absolute;
-  top: 140px;
+  top: 180px;
   width: 100%;
-  height: calc(100% -140px);
+  height: calc(100% -180px);
   background: transparent;
   padding: 20px;
   box-sizing: border-box;
   transform: translateY(100%);
   transition: transform 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-item: start;
   overflow-y: auto;
 }
 
 .letter .content {
   background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 85%;
+  max-height: 100%;
   padding: 10px;
   border-radius: 10px;
-  max-height: 100%;
   overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .message {
   color: white;
   font-size: 14px;
   line-height: 1.6;
+  text-align: left;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
