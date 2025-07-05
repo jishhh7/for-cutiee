@@ -14,17 +14,28 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background: url('pop.jpg') center center / cover no-repeat;
+  background: url('pop.jpg') center center no-repeat;
+  background-size: cover;
   filter: blur(20px) brightness(0.5);
   z-index: -1;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+.envelope.open ~ .background {
+  opacity: 1;
+}
+<body>
+  <div class="background"></div>
+
+  <div class="envelope" onclick="this.classList.add('open')">
+    <!-- flap + letter content -->
+  </div>
+</body>
+
 
 /* Envelope */
-.envelope {
   .envelope {
   position: relative;
   width: 400px;
@@ -54,7 +65,7 @@ body {
   position: absolute;
   top: 220px;
   width: 100%;
-  height: calc(100% - 120px);
+  height: calc(100% - 220px);
   transform: translateY(100%);
   transition: transform 1s ease-in-out;
   display: flex;
@@ -63,9 +74,13 @@ body {
   overflow: hidden;
   padding: 0 10px;
   box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
 }
 .envelope.open .letter {
   transform: translateY(0);
+  opacity: 1;
+  pointer- events: auto;
 }
 
 .letter .content {
